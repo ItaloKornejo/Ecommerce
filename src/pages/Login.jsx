@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import { getAllProductsCart } from '../store/slices/cart.slice';
 import { setUserGlobal } from '../store/slices/user.slice';
 import './styles/login.css'
@@ -12,6 +14,7 @@ const Login = () => {
   const [isLogged, setIsLogged] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const loginSwal = withReactContent(Swal)
 
   const submit = (data) => {
     // console.log(data);
@@ -23,10 +26,23 @@ const Login = () => {
         localStorage.setItem('user', JSON.stringify(res.data.data.user))
         dispatch(setUserGlobal(res.data.data.user))
         dispatch(getAllProductsCart())
+        loginSwal.fire({
+          title: <strong>Success</strong>,
+          html: <span>{`Welcome ${res.data.data.user.firstName}`}</span>,
+          timer: 2000,
+          icon: 'success'
+        })
         handleNavigationHome()
 
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        loginSwal.fire({
+          title: <strong>{err.response.data.status}</strong>,
+          html: <span>{err.response.data.message}</span>,
+          timer: 1800,
+          icon: 'error'
+        })
+        console.log(err)})
   }
 
   useEffect(() => {

@@ -138,7 +138,6 @@ console.log(cart);
                     </div>
 
                     <div className='header__btn'>
-
                         <div onClick={handleShowCart} className={`header__btn-cart `} >
                             <i className='header__icon-cart bx bxs-cart-alt' ></i>
                             <span style={handleShowCounterCart()} className='header__icon-cart-label'>{handleCounterCart()}</span>

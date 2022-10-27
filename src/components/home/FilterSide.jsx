@@ -1,15 +1,24 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import { setSearchGlobal } from '../../store/slices/search.slice'
 import './styles/filterside.css'
 
-const FilterSide = ({showFilter}) => {
+const FilterSide = ({ showFilter }) => {
 
 	const formPriceFrom = useRef(null);
 	const formPriceTo = useRef(null);
-
+	const navigate = useNavigate()
+	const filterSwal = withReactContent(Swal)
 	const [categories, setCategories] = useState()
+	const searchFilter = useSelector(state => state.search)
+	const products = useSelector(state => state.products)
+	const dispatch = useDispatch()
+
+
 	useEffect(() => {
 		const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/products/categories'
 		axios.get(URL)
@@ -17,33 +26,42 @@ const FilterSide = ({showFilter}) => {
 			.catch(err => console.log(err))
 	}, [])
 
-	const searchFilter = useSelector(state => state.search)
-	const products = useSelector(state => state.products)
-	const dispatch = useDispatch()
+
+	useEffect(() => {
+	  if(searchFilter?.[0]!=='price'){
+		formPriceTo.current.value=null;
+		formPriceFrom.current.value=null;
+	  }
+	}, [searchFilter])
+	
 
 	const handleFilterPrice = (e) => {
 		e.preventDefault()
 		const priceFrom = formPriceFrom.current;
 		const priceTo = formPriceTo.current;
-		if (parseInt(priceFrom.value )>= 0 && parseInt(priceTo.value) > parseInt(priceFrom.value)) {
-			// e.preventDefault()
-			dispatch(setSearchGlobal(['price', priceFrom.value, priceTo.value]))
+		if (parseInt(priceFrom.value) >= 0 && parseInt(priceTo.value) > parseInt(priceFrom.value)) {
+			navigate(`/${priceFrom.value + '-' + priceTo.value}`)
 		} else {
-			console.log('HANDLE PRICE: ', 'PRECIO FAIl');
+			filterSwal.fire({
+				title: <strong>Failed search</strong>,
+				html: <span>invalid fields</span>,
+				timer: 1800,
+				icon: 'error'
+			})
 		}
-
 	}
 
 	const handleFilterCategory = (category) => {
-		if(category==='all'){
+		if (category === 'all') {
 			dispatch(setSearchGlobal(['all']))
-		}else{
-			dispatch(setSearchGlobal(['category',category]))
+		} else {
+			dispatch(setSearchGlobal(['category', category]))	
 		}
+		navigate(`/`)
 	}
 
 	const handlefilter = () => {
-		if(showFilter){
+		if (showFilter) {
 			return 'filter__show'
 		}
 	}
@@ -74,9 +92,9 @@ const FilterSide = ({showFilter}) => {
 				<label htmlFor="categoryToggle" className="filter__category-label">Category<i className='bx bx-chevron-down'></i></label>
 				<div className="filter__category-content">
 					<div className='filter__categories'>
-					<p onClick={()=>handleFilterCategory('all')}>All Products</p>
+						<p onClick={() => handleFilterCategory('all')}>All Products</p>
 						{
-							categories?.map(category => <p key={category.id} onClick={()=>handleFilterCategory(category.name)}>{category.name}</p>)
+							categories?.map(category => <p key={category.id} onClick={() => handleFilterCategory(category.name)}>{category.name}</p>)
 						}
 					</div>
 

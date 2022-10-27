@@ -5,7 +5,7 @@
     /* min-height: 700px; */
     margin: 0 auto;
     padding: 0 2rem;
-    padding-top: 6rem;
+    padding-top: 9.5rem;
 }
 
 .purchases__nav{
@@ -15,3 +15,9 @@
     font-size: 0.8rem;
 
 }
+
+@media (min-width:650px) {
+    .purchases-container{
+        padding-top: 6rem;  
+    }
+  }

@@ -21,6 +21,6 @@ export const getAllProductsCart = () => (dispatch) => {
         .then(res =>{
             console.log('FROM SLICE cart',res.data);
             dispatch(setCartGlobal(res.data.data.cart))})
-        .catch(err => console.log(err,'FAIL'))
+        .catch(err => console.log(err,'No esta Logeado'))
 }
 

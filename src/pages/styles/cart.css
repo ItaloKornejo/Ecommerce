@@ -9,8 +9,9 @@
     height:92vh;
     background-color: #fff;
     position: fixed;
-    top: 104px;
+    top: 154px;
     right: 0;
+    border-left: 2px var(--color--3) solid;
     transform: translateX(100%);
     /* transform: translateY(10%); */
     transition: transform 0.5s;
@@ -84,6 +85,12 @@
     height: 1rem;
     font-size:1.5rem ;
 }
+
+@media (min-width:650px) {
+    .cart-container {
+        top: 104px;
+    }
+  }
 
 @media (min-height:650px) {
     .content_cart-total {

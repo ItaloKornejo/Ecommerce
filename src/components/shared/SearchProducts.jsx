@@ -3,6 +3,7 @@ import './styles/searchproducts.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useRef, useState } from 'react'
 import { setSearchGlobal } from '../../store/slices/search.slice'
+import { useNavigate, useParams } from 'react-router-dom'
 
 
 const SearchProducts = () => {
@@ -10,11 +11,17 @@ const SearchProducts = () => {
   const [searchWord,setSearchWord] = useState('')
   const formSearch = useRef('')
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  // if(true){
+  //   console.log('FROM BAR SEARCH',filter);
+  // }
 
   const handleFilterWord = (e) => {
+    e.preventDefault()
 		const formSearchWord = formSearch.current;
+    console.log(formSearchWord.value.length);
 		if ( formSearchWord.value.length >1) {
-			e.preventDefault()
 			dispatch(setSearchGlobal(['word', formSearchWord.value]))
 		} else {
 			console.log('handle SEARCH WORD FAKE');
@@ -22,25 +29,12 @@ const SearchProducts = () => {
 	}
 
   const handleFilterNowWord = (e) => {
+    if ( searchWord.length===0) {
+      navigate(`/`)
+		} 
     setSearchWord(e.target.value)
-    dispatch(setSearchGlobal(['word', e.target.value]))
+     dispatch(setSearchGlobal(['word', e.target.value]))
   }
-
-// const InputSearch = ({inputText, setInputText}) => {
-
-//   const handleChange = e => {
-//     setInputText(e.target.value)
-//   }
-
-//   return (
-//     <input value={inputText} onChange={handleChange} type="text" />
-//   )
-// }
-
-// export default InputSearch
-
-
-// console.log('FREOM SEARCH: ',searchWord);
 
   return (
     <div className='search-container'>
