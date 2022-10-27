@@ -22,10 +22,11 @@ const FilterSide = ({showFilter}) => {
 	const dispatch = useDispatch()
 
 	const handleFilterPrice = (e) => {
+		e.preventDefault()
 		const priceFrom = formPriceFrom.current;
 		const priceTo = formPriceTo.current;
 		if (parseInt(priceFrom.value )>= 0 && parseInt(priceTo.value) > parseInt(priceFrom.value)) {
-			e.preventDefault()
+			// e.preventDefault()
 			dispatch(setSearchGlobal(['price', priceFrom.value, priceTo.value]))
 		} else {
 			console.log('HANDLE PRICE: ', 'PRECIO FAIl');

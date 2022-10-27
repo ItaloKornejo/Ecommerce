@@ -96,6 +96,7 @@
 }
 
 .product-info__btn {
+    border-radius: 3px;
     width: 100%;
     grid-column: span 2;
     padding: 12px;
@@ -119,6 +120,7 @@
 @media (min-width:800px) {
     .product-info__price-container,.product-info__quantity-container{
         width: 100%;
+        
     }
 
     .product-info {

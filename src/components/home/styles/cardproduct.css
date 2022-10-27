@@ -1,12 +1,12 @@
 .product__container {
     z-index: 0;
     width: 280px;
-    /* max-width: 250px; */
-    /* height: 400px; */
     border: 1px var(--color-border) solid;
     border-radius: 5px;
     cursor: pointer;
     transition: tranform 250ms ease;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
 }
 
 .product__container:hover {
@@ -28,6 +28,11 @@
     /* width: 100px; */
 }
 
+
+.product__body{
+    display: block;
+    height: auto;
+}
 .product__title {
     margin: 0.5rem;
 }
@@ -37,6 +42,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 }
 
 .product__discount-label {
@@ -61,11 +67,8 @@
 }
 
 .product__btn-container{
-    /* position: absolute; */
     padding: 0.5rem 1.5rem;
-    /* display: flex;ss */
-    /* flex-direction: row;
-    justify-content: space-between; */
+
 }
 
 .product__btn-like{
@@ -90,6 +93,7 @@
     color: var(--color--3);
 }
 
+
 .product__btn-cart{
     width: 100%;
     display: flex;
@@ -99,11 +103,13 @@
     border: none;
     background-color: var(--color--3);
     border-radius: 5px;
+    transition: 350ms ease;
     cursor: pointer;
 }
 
 .product__cart-text{
     font-weight: 700;
+    font-family: 'Poppins', sans-serif;
 }
 
 .product__icon-cart{
@@ -112,9 +118,12 @@
 }
 
 .product__btn-cart:hover{
+    transition: 350ms ease;
     background-color: var(--color--1);
+
 }
 
 .product__btn-cart:hover .product__icon-cart,.product__btn-cart:hover .product__cart-text{
     color: var(--color--3);
+    
 }

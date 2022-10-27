@@ -57,7 +57,7 @@ const ProductInfo = ({ product }) => {
 
     const handleCurrency = () =>{
 
-        return currency[0]+(currency[1]*product?.price)
+        return currency[0]+' '+(currency[1]*product?.price).toFixed(1)
     }
 
     return (

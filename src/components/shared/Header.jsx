@@ -138,10 +138,7 @@ console.log(cart);
                     </div>
 
                     <div className='header__btn'>
-                        {/* <div className='header__btn-like'>
-                            <i className='header__icon-like bx bx-heart' ></i>
-                            <span className='header__icon-like-label'>1</span>
-                        </div> */}
+
                         <div onClick={handleShowCart} className={`header__btn-cart `} >
                             <i className='header__icon-cart bx bxs-cart-alt' ></i>
                             <span style={handleShowCounterCart()} className='header__icon-cart-label'>{handleCounterCart()}</span>
