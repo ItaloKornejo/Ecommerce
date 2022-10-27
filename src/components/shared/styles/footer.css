@@ -1,0 +1,8 @@
+.footer-container{
+    margin: 1rem 0rem;
+    height: 100px;
+    background-color: var(--color--21);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

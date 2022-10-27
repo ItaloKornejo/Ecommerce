@@ -1,0 +1,18 @@
+.similar-container{
+    /* display: flex; */
+    width: 100%;
+}
+
+.similar__product-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    max-width: 900px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.similar__title{
+    color: var(--color--1);
+    padding-bottom: 1rem;
+}

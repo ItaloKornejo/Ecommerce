@@ -1,0 +1,75 @@
+.login-container{
+    padding-top: 7rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    
+}
+
+.login__form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 350px;
+    height: 350px;
+    border-top: 5px var(--color--3) solid;
+    border-radius: 2px 2px 0 0 ;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.login__form-container h2{
+    padding-bottom: 2rem;
+}
+
+#password,#email{
+    border: none;
+}
+
+#email:focus,#password:focus{
+    outline: none;
+}
+
+.login__email,.login__password{
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    border: 1px var(--color--6) solid;
+    width: 80%;
+}
+
+.login__email:hover,.login__password:hover{
+    border: 1px var(--color--3) solid;
+    /* transform: scale(1.1); */
+}
+
+
+.login__email:hover,.login__password:hover .login__email-icon{
+    color:var(--color--3);
+}
+.login__email:hover,.login__password:hover .login__password-icon{
+    color:var(--color--3);
+}
+
+
+.login__btn{
+    width: 80%;
+    height: 35px;
+    background-color: var(--color--13);
+    color: var(--color--12);
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.login__text{
+    padding-top: 3rem;
+    font-size: 0.7rem;
+}
+
+.login__text a{
+    color: var(--color--13);
+    font-weight: 700;
+    cursor: pointer;
+}

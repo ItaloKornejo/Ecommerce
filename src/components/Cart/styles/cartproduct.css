@@ -1,0 +1,218 @@
+/* .content_cart-body {
+    
+    padding-top: 3rem;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    overflow-y: scroll;
+}
+
+.item_cart {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    background-color: var(--color1);
+    gap:1rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.item_cart-img {
+    width: 35%;
+
+}
+.item_cart .item_cart_info{
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+
+    
+}
+
+
+.item_cart_info h4{
+    color: var(--color4);
+}
+
+
+.item_cart-options{
+    width: 100%;
+    height: 33%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+}
+
+.item_cart-options :nth-child(1){
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:#d9534f;
+    border: 2px solid #d9534f;
+    border-radius: 10%;
+}
+
+.item_cart-options :nth-child(1):hover{
+    background-color: #d9534f;
+    color:var(--color4);
+}
+
+.item_cart-options :nth-child(2){
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.item_cart-options :nth-child(3){
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:#1f9bcf;
+    border: 2px solid #1f9bcf;
+    border-radius: 10%;
+}
+.item_cart-options :nth-child(3):hover{
+    background-color: #1f9bcf;
+    color:var(--color4);
+}
+.item_cart-options :nth-child(4){
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    grid-area: 2 / 1 / 3 / 4; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:#f0ad4e;
+    border: 2px solid #f0ad4e;
+    border-radius: 5px;
+}
+.item_cart-options :nth-child(4):hover{
+    background-color: #f0ad4e;
+    color:var(--color4);
+}
+
+
+
+.content_cart-total {
+    border-top: 0.3rem solid var(--color1);
+    padding: 1rem;
+    height: 10%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.content_cart-total >div{
+    cursor: pointer;
+    padding: 1rem;
+    background-color: #4bbf73;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color4);
+}
+.payNow p{
+    font-weight: 600;
+}
+
+.payNow i{
+    padding-bottom: 1rem;
+    height: 1rem;
+    font-size:1.5rem ;
+} */
+
+.cart__product-container {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.cart__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart__header-brand {
+    font-size: 0.7rem;
+    color: var(--color--20);
+}
+
+.cart__icon-delete {
+    font-size: 0.7;
+    color: red;
+}
+
+.cart__icon-delete:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.cart__product-title {
+    font-size: 0.8rem;
+    color: var(--color--1);
+    font-weight: 700;
+}
+
+.cart__product-amount {
+    display: flex;
+    margin: 10px 0;
+}
+
+.cart__product-minus,
+.cart__product-plus {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px var(--color--20) solid;
+    background: var(--color--3);
+    transition: 300ms ease;
+
+}
+
+.cart__amount-current {
+    padding: 5px 15px;
+    border-top: 1px var(--color--20) solid;
+    border-bottom: 1px var(--color--20) solid;
+}
+
+.cart__product-minus:hover,
+.cart__product-plus:hover {
+    background: var(--color--1);
+    color: var(--color--3);
+    transition: 300ms ease;
+}
+
+.cart__product-total {
+    text-align: end;
+}
+
+.cart__total-text {
+    font-size: 0.8rem;
+    color: var(--color--20);
+    margin-right: 1rem;
+}
+
+.cart__total-current {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color--21);
+}
+
