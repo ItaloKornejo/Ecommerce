@@ -10,13 +10,13 @@ import './styles/cart.css'
 const Cart = ({ isShowCart }) => {
   const currency = useSelector(state => state.currency)
   const cart = useSelector(state => state.cart)
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   // useEffect(() => {
   //   dispatch(getAllProductsCart())
   // }, [])
-  
- 
+
+
   const handleShowCart = () => {
     if (isShowCart) {
       return 'cart-show'
@@ -24,46 +24,50 @@ const Cart = ({ isShowCart }) => {
     return ''
   }
 
-   
+
   const handlePurchase = () => {
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
-      const data = {
-        "street": "Green St. 1456",
-        "colony": "Southwest",
-        "zipCode": 12345,
-        "city": "USA",
-        "references": "Some references"
-      }
-      axios.post(URL, data, getConfig())
-        .then(res => {
-          dispatch(setCartGlobal(null))
-          dispatch(getAllProductsCart())
-          console.log(res.data)
-        })
-        .catch(err => console.log(err))
+    const data = {
+      "street": "Green St. 1456",
+      "colony": "Southwest",
+      "zipCode": 12345,
+      "city": "USA",
+      "references": "Some references"
+    }
+    axios.post(URL, data, getConfig())
+      .then(res => {
+        dispatch(setCartGlobal(null))
+        dispatch(getAllProductsCart())
+        console.log(res.data)
+      })
+      .catch(err => console.log(err))
 
   }
 
-  
-  
+
+
 
   const getTotal = () => {
-    const total=(cart?.products.map(prod => parseInt(prod.price)*prod.productsInCart.quantity))?.reduce(function(a, b) { return a + b; }, 0)
-    return  currency[0]+(total*currency[1]).toFixed(1)
+    const total = (cart?.products.map(prod => parseInt(prod.price) * prod.productsInCart.quantity))?.reduce(function (a, b) { return a + b; }, 0)
+    return currency[0] + (total * currency[1]).toFixed(1)
   }
 
   return (
     <article className={`cart-container ${handleShowCart()}`}>
       <div className="content_cart-body">
+      <h3>Cart</h3>
         {
-          cart?.products.map(product => (<CartProduct key={product.id} product={product}/>
+          cart?.products.map(product => (<CartProduct key={product.id} product={product} />
 
           ))
         }
       </div>
       <div className="content_cart-total">
-        <h3>Total:<span id="total">{getTotal()}</span></h3>
-        <div onClick={handlePurchase} className="payNow"><p>Pagar ahora</p><i className='bx bx-money-withdraw' ></i></div>
+        <h3 className=''>Total: <span >{getTotal()}</span></h3>
+        <div onClick={handlePurchase} className="payNow">
+          <p>Pagar ahora</p>
+          <i className='bx bx-money-withdraw' ></i>
+        </div>
       </div>
 
     </article>

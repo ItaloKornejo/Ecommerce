@@ -5,5 +5,8 @@
   /* text-align: center; */
 }
 .App{
-  /* background-color: blueviolet; */
+   /* height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;  */
 }

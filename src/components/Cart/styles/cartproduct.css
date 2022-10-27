@@ -139,7 +139,7 @@
 } */
 
 .cart__product-container {
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -181,6 +181,7 @@
 .cart__product-plus {
     cursor: pointer;
     padding: 5px;
+    margin: auto 0;
     border: 1px var(--color--20) solid;
     background: var(--color--3);
     transition: 300ms ease;
@@ -188,7 +189,7 @@
 }
 
 .cart__amount-current {
-    padding: 5px 15px;
+    padding: 0 15px;
     border-top: 1px var(--color--20) solid;
     border-bottom: 1px var(--color--20) solid;
 }

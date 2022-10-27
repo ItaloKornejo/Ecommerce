@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import CardPurchases from '../components/purchases/CardPurchases'
+import Footer from '../components/shared/Footer'
 import getConfig from '../utils/getConfig'
 import './styles/purchases.css'
 
@@ -35,6 +36,7 @@ const Purchases = () => {
         }
       </div>
     </div>
+
   )
 }
 
