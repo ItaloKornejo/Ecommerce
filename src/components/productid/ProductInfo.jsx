@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { getAllProductsCart } from '../../store/slices/cart.slice'
 import getConfig from '../../utils/getConfig'
 import './styles/productinfo.css'
@@ -11,6 +12,7 @@ const ProductInfo = ({ product }) => {
     const currency = useSelector(state => state.currency)
     const [counter,setCounter] = useState(1)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleMinus = () =>{
         if(counter>1){
@@ -52,6 +54,8 @@ const ProductInfo = ({ product }) => {
                         console.log(res.data)})
                     .catch(err => console.log(err))
             }
+        }else{
+            navigate(`/login`)
         }
     }
 

@@ -51,6 +51,8 @@ const CardProduct = ({ product }) => {
                     })
                     .catch(err => console.log(err))
             }
+        }else{
+            navigate(`/login`)
         }
     }
 
