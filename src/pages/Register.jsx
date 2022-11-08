@@ -73,7 +73,7 @@ const Register = () => {
                     <input type="password" id='Password' placeholder='Password' autoComplete="on" {...register('password')} />
                 </div>
                 <div className='register__input'>
-                    <label htmlFor='phone'>Email</label>
+                    <label htmlFor='phone'>Phone</label>
                     <input type='text' id='phone' placeholder='Enter your phone'  {...register('phone')} />
                 </div>
                 <button className='register__btn'>Sign up</button>
