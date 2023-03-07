@@ -26,7 +26,7 @@ const Cart = ({ isShowCart }) => {
 
 
   const handlePurchase = () => {
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
+    const URL = 'https://e-commerce-api.academlo.tech/api/v1/purchases'
     const data = {
       "street": "Green St. 1456",
       "colony": "Southwest",

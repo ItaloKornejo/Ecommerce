@@ -31,7 +31,7 @@ const ProductInfo = ({ product }) => {
     
                 console.log('En PROCESO de AUMENTAR', product.id, currentCart.products.filter(prod => prod.id === product.id)[0].productsInCart.quantity);
     
-                const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+                const URL = 'https://e-commerce-api.academlo.tech/api/v1/cart'
                 const data = {
                     id: product.id,
                     newQuantity: (currentCart.products.filter(prod => prod.id === product.id)[0].productsInCart.quantity + counter)
@@ -43,7 +43,7 @@ const ProductInfo = ({ product }) => {
                     .catch(err => console.log(err))
     
             } else {
-                const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+                const URL = 'https://e-commerce-api.academlo.tech/api/v1/cart'
                 const data = {
                     id: product.id,
                     quantity: 1

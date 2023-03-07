@@ -11,7 +11,7 @@ const Purchases = () => {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/purchases`
+    const URL = `https://e-commerce-api.academlo.tech/api/v1/purchases`
     axios.get(URL,getConfig())
     .then(res => setPurchases(res.data.data.purchases))
     .catch(err => console.log(err))

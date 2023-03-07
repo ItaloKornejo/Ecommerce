@@ -18,7 +18,7 @@ const Login = () => {
 
   const submit = (data) => {
     // console.log(data);
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users/login'
+    const URL = 'https://e-commerce-api.academlo.tech/api/v1/users/login'
     axios.post(URL, data)
       .then(res => {
         console.log(res.data);

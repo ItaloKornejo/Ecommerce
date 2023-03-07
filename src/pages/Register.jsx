@@ -16,7 +16,7 @@ const Register = () => {
     const submit = (data) => {
         data['role'] = 'admin';
         if (data.email && data.firstName && data.lastName && data.email && (data.phone.length >= 10)) {
-            const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
+            const URL = 'https://e-commerce-api.academlo.tech/api/v1/users'
             axios.post(URL, data)
                 .then(res => {
                     console.log(res, data)

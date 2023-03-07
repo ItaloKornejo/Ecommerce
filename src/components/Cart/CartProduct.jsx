@@ -18,7 +18,7 @@ const CartProduct = ({ product }) => {
 
       console.log('En PROCESO de Restar', product.id, currentCart.products.filter(prod => prod.id === product.id)[0].productsInCart.quantity);
 
-      const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+      const URL = 'https://e-commerce-api.academlo.tech/api/v1/cart'
       const data = {
         id: product.id,
         newQuantity: (currentCart.products.filter(prod => prod.id === product.id)[0].productsInCart.quantity - 1)
@@ -31,7 +31,7 @@ const CartProduct = ({ product }) => {
         .catch(err => console.log(err))
 
     } else {
-      const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/cart/${product.id}`
+      const URL = `https://e-commerce-api.academlo.tech/api/v1/cart/${product.id}`
       axios.delete(URL, getConfig())
         .then(res => {
           dispatch(getAllProductsCart())
@@ -48,7 +48,7 @@ const CartProduct = ({ product }) => {
 
       console.log('En PROCESO de Restar', product.id, currentCart.products.filter(prod => prod.id === product.id)[0].productsInCart.quantity);
 
-      const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+      const URL = 'https://e-commerce-api.academlo.tech/api/v1/cart'
       const data = {
         id: product.id,
         newQuantity: (currentCart.products.filter(prod => prod.id === product.id)[0].productsInCart.quantity + 1)
@@ -65,7 +65,7 @@ const CartProduct = ({ product }) => {
 
   const handleDelete = (e) => {
     e.stopPropagation()
-    const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/cart/${product.id}`
+    const URL = `https://e-commerce-api.academlo.tech/api/v1/cart/${product.id}`
     axios.delete(URL, getConfig())
       .then(res => {
         dispatch(getAllProductsCart())

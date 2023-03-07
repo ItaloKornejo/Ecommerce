@@ -15,7 +15,7 @@ export const {setProductsGoblal} = productsSlice.actions
 export default productsSlice.reducer
 
 export const getProducts = () => (dispatch) => {
-    const URL= `https://ecommerce-api-react.herokuapp.com/api/v1/products`
+    const URL= `https://e-commerce-api.academlo.tech/api/v1/products`
     return axios.get(URL)
         .then(res => dispatch(setProductsGoblal(res.data.data.products)))
         .catch(err => console.log(err))
